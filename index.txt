@@ -1,2 +1,0 @@
-"Q1: What is java? A1: Java is a robust, object oriented programming language." 
-"Q2: What is your favorite food? A2: My favorite food is biryani." 
