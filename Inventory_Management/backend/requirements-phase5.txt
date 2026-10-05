@@ -1,0 +1,5 @@
+langgraph>=0.1.17
+langchain-google-genai>=1.0.6
+langsmith>=0.1.77
+structlog>=24.1.0
+requests>=2.32.3

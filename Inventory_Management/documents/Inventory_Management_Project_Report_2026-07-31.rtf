@@ -1,0 +1,66 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}{\f1 Cambria;}}
+\viewkind4\uc1
+\pard\sa220\sl300\slmult1\qc\b\f1\fs40 Inventory Management Portal\line Project Report\b0\f0\fs24\line Submission Date: 31 July 2026\par
+
+\pard\sa180\sl276\slmult1\b\f1\fs30 1. Introduction\b0\f0\fs24\par
+This report presents the design, implementation, testing, and final validation outcomes of the Inventory Management Portal. The solution was built to support end-to-end inventory and procurement operations with secure role-based access and auditable workflows.\par
+
+\b\f1\fs30 2. Project Objectives\b0\f0\fs24\par
+\pard\li720\sa120\tx720\bullet\tab Deliver a centralized system to manage products, suppliers, stock, and purchase orders.\par
+\bullet\tab Enforce role-based access control and workflow-driven approvals.\par
+\bullet\tab Provide dashboard visibility and audit traceability for operations.\par
+\bullet\tab Ensure release readiness through functional and end-to-end validation.\par
+
+\pard\sa180\sl276\slmult1\b\f1\fs30 3. System Architecture and Technology\b0\f0\fs24\par
+\pard\li720\sa120\tx720\bullet\tab Frontend: React, TypeScript, Vite, Bootstrap.\par
+\bullet\tab Backend: Spring Boot REST APIs, Spring Security, JWT.\par
+\bullet\tab Persistence: MySQL with JPA/Hibernate ORM.\par
+\bullet\tab Reporting: CSV and PDF export capabilities.\par
+
+\pard\sa180\sl276\slmult1\b\f1\fs30 4. Functional Scope Delivered\b0\f0\fs24\par
+\pard\li720\sa120\tx720\bullet\tab Authentication: register, login, logout, protected route enforcement.\par
+\bullet\tab Product Management: list, detail, controlled create/update/delete via approvals.\par
+\bullet\tab Supplier Management: create, update, detail views, and performance insights.\par
+\bullet\tab Purchase Orders: create, submit, approve, receive, cancel lifecycle.\par
+\bullet\tab Stock Operations: low-stock alerts, movement requests, audit logging.\par
+\bullet\tab Approval Center: role-specific review of product and stock requests.\par
+
+\pard\sa180\sl276\slmult1\b\f1\fs30 5. Role-Based Access Model\b0\f0\fs24\par
+\pard\li720\sa120\tx720\bullet\tab Store Manager: oversight, PO approval, stock approval review.\par
+\bullet\tab Inventory Analyst: product approval review and reorder optimization.\par
+\bullet\tab Procurement Officer: supplier administration and procurement workflows.\par
+\bullet\tab Warehouse Staff: receiving operations and stock movement initiation.\par
+
+\pard\sa180\sl276\slmult1\b\f1\fs30 6. Testing Strategy and Coverage\b0\f0\fs24\par
+Testing included backend automated tests and complete manual end-to-end execution across all roles and core workflows.\par
+\pard\li720\sa120\tx720\bullet\tab Backend validation: clean test run with zero failures.\par
+\bullet\tab Role coverage: all roles tested with allowed and forbidden action checks.\par
+\bullet\tab Workflow coverage: product approvals, supplier lifecycle, PO lifecycle, stock approvals.\par
+\bullet\tab Data integrity checks: stock mutation correctness and audit trace verification.\par
+\bullet\tab Export checks: CSV and PDF trigger validation.\par
+
+\pard\sa180\sl276\slmult1\b\f1\fs30 7. Defect and Improvement Summary\b0\f0\fs24\par
+A redirect usability defect was identified where users could land on an unauthorized page after login when a previously requested route was forbidden for that role.\par
+\pard\li720\sa120\tx720\bullet\tab Root cause: blind reuse of stored pre-login route.\par
+\bullet\tab Fix: role-aware route validation before applying post-login redirect.\par
+\bullet\tab Result: users are redirected to a safe role default route when prior route is disallowed.\par
+\bullet\tab Post-fix verification: successful.\par
+
+\pard\sa180\sl276\slmult1\b\f1\fs30 8. Outcomes and Release Recommendation\b0\f0\fs24\par
+\pard\li720\sa120\tx720\bullet\tab Critical business workflows are implemented and validated.\par
+\bullet\tab Role-based security behavior is functioning correctly.\par
+\bullet\tab Auditability and reporting requirements are met.\par
+\bullet\tab Release recommendation: GO.\par
+
+\pard\sa180\sl276\slmult1\b\f1\fs30 9. Future Enhancements\b0\f0\fs24\par
+\pard\li720\sa120\tx720\bullet\tab Automated end-to-end UI regression suite for role flows.\par
+\bullet\tab Frontend performance optimization for large bundles and dashboard views.\par
+\bullet\tab Advanced analytics for forecasting and supplier risk insights.\par
+\bullet\tab CI/CD quality gates with expanded non-functional test coverage.\par
+
+\pard\sa180\sl276\slmult1\b\f1\fs30 10. Conclusion\b0\f0\fs24\par
+The Inventory Management Portal delivers a complete, secure, and auditable operational platform aligned with project goals. Based on implementation completeness and successful QA validation, the project is ready for final submission.\par
+
+\pard\sa220\qc\i End of Report\i0\par
+}

@@ -1,0 +1,153 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phase 1 SonarQube Gate Closure Note</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --ink: #1f2a37;
+      --muted: #5b6472;
+      --accent: #0f766e;
+      --accent-soft: #d1fae5;
+      --line: #d9e2ec;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Calibri", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top right, #e6f7ff, var(--bg) 45%);
+      line-height: 1.45;
+    }
+    .page {
+      max-width: 920px;
+      margin: 28px auto;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 28px 34px;
+      background: linear-gradient(120deg, #0f766e, #0e7490);
+      color: #fff;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 0.2px;
+    }
+    .sub {
+      margin-top: 8px;
+      font-size: 14px;
+      opacity: 0.95;
+    }
+    .content {
+      padding: 26px 34px 34px;
+    }
+    .status {
+      display: inline-block;
+      margin: 6px 0 16px;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #065f46;
+      background: var(--accent-soft);
+      border: 1px solid #a7f3d0;
+      border-radius: 999px;
+    }
+    h2 {
+      margin: 22px 0 10px;
+      font-size: 18px;
+      color: #0b3b4d;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 6px;
+    }
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+    li { margin: 6px 0; }
+    .kv {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 8px 14px;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+    .k { color: var(--muted); font-weight: 600; }
+    .footer {
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; border-radius: 0; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>Phase 1 SonarQube Gate Closure Note</h1>
+      <div class="sub">Inventory Management Project | Final Security and Quality Sign-off</div>
+    </section>
+
+    <section class="content">
+      <div class="status">QUALITY GATE: PASSED</div>
+
+      <div class="kv">
+        <div class="k">Project Key</div><div>inventory-management-phase1</div>
+        <div class="k">SonarQube Server</div><div>http://localhost:9001</div>
+        <div class="k">Dashboard</div><div>http://localhost:9001/dashboard?id=inventory-management-phase1</div>
+        <div class="k">Execution Date</div><div>2026-07-31</div>
+      </div>
+
+      <h2>Validation Evidence</h2>
+      <ul>
+        <li>Frontend production build completed successfully.</li>
+        <li>Backend verification completed with 45 out of 45 tests passed.</li>
+        <li>JaCoCo XML coverage report generated and imported by SonarQube.</li>
+        <li>Authenticated Sonar scan executed with quality gate wait enabled.</li>
+        <li>Scanner finalized with BUILD SUCCESS and QUALITY GATE STATUS: PASSED.</li>
+      </ul>
+
+      <h2>Remediation Summary</h2>
+      <ul>
+        <li>Sonar scan now uses fully qualified Maven goal: org.sonarsource.scanner.maven:sonar-maven-plugin:sonar.</li>
+        <li>PowerShell script strengthened with explicit external exit-code checks.</li>
+        <li>Maven arguments switched to array dispatch to avoid line-continuation parsing errors.</li>
+      </ul>
+
+      <h2>Residual Observations</h2>
+      <ul>
+        <li>Scanner warned about missing blame metadata on multiple files.</li>
+        <li>This does not block gate status but should be corrected for full historical attribution.</li>
+      </ul>
+
+      <h2>Closure Decision</h2>
+      <ul>
+        <li>Phase 1 SonarQube gate is closed as PASS.</li>
+        <li>Security and quality baseline requirements are satisfied for current project scope.</li>
+      </ul>
+
+      <h2>Approvals</h2>
+      <div class="kv">
+        <div class="k">QA Lead</div><div>____________________</div>
+        <div class="k">Security Reviewer</div><div>____________________</div>
+        <div class="k">Engineering Lead</div><div>____________________</div>
+        <div class="k">Date</div><div>____________________</div>
+      </div>
+
+      <div class="footer">Generated automatically from validated local SonarQube run results.</div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,82 @@
+SLIDE_COUNT: 4
+
+=== SLIDE 1 ===
+[1] THE CASE · AI-POWERED INVENTORY MANAGEMENT & PROCUREMENT SYSTEM (POC-07)
+[2] Problem → Solution → Impact
+[3] Turning reactive stock chaos into predictive, automated operations.
+[6] 1
+[7] PROBLEM
+[8] Inventory is managed blind
+[9] Stockouts & overstock discovered after they hurt revenue Manual spreadsheets for SKUs, POs & suppliers — error-prone, no audit trail No forecasting — reorder decisions are guesswork Supplier performance & holding costs are invisible Insights buried across disconnected tools
+[12] 2
+[13] SOLUTION
+[14] One AI-native platform
+[15] FastAPI + SQLAlchemy backend, JWT-secured CRUD for products, stock, POs, suppliers Automated SKU / PO generation, low-stock & out-of-stock alerting Analytics engine: health score, demand forecast, reorder & cost intelligence Conversational AI layer — MCP tools + LangGraph multi-agent + RAG assistant React dashboard + Streamlit executive views — one data source of truth
+[18] 3
+[19] IMPACT
+[20] Measurable business value
+[21] Stockout & overstock risk caught before it costs revenue Manual procurement effort cut via automated reorder recommendations Data-backed supplier negotiation using reliability scoring Faster decisions — plain-English question in, instant answer out Fully tested, logged & auditable (20+ automated tests, structured logs)
+[22] AI-Powered Inventory Management & Procurement System · POC-07
+[23] 1
+
+=== SLIDE 2 ===
+[1] SYSTEM DESIGN
+[2] Architecture Diagram
+[3] Layered architecture — presentation, API, AI/agent, and data — built for security, scale and conversational access.
+[4] PRESENTATION LAYER
+[7] React + Vite SPA
+[8] Dashboard · Products · Stock · Orders · Suppliers
+[11] Streamlit Apps
+[12] Chat UI · Phase-5 executive dashboard
+[13] HTTPS / JWT
+[14] API LAYER
+[17] FastAPI Backend
+[18] Auth · Products · Stock · Orders · Suppliers · Dashboard · Phase-5 · Agent
+[21] Analytics Service
+[22] Health · Forecast · Cost · Reorder
+[23] TOOL CALLS / PROMPTS
+[24] AI / AGENT LAYER
+[27] MCP Server
+[28] 6 tools: stock, PO, alerts, catalog, dashboard
+[31] LangGraph Multi-Agent
+[32] Gemini 2.0 Flash · end-to-end inventory analysis
+[35] RAG Assistant
+[36] Chroma vector store · inventory policy Q&A
+[37] SQLALCHEMY ORM
+[38] DATA LAYER
+[41] SQLite + Chroma Vector DB
+[42] Users · Products · Stock movements · Orders · Suppliers · embedded inventory manual
+[45] Cross-Cutting: JWT Auth · Structlog
+[46] Security + structured audit logging (poc_id = POC-07)
+[47] AI-Powered Inventory Management & Procurement System · POC-07
+[48] 2
+
+=== SLIDE 3 ===
+[1] BEFORE VS AFTER
+[2] Business Impact — By the Numbers
+[3] Same business, two ways of operating: manual / reactive vs. AI-automated / predictive.
+[5] 85.5%
+[6] Sample inventory health score
+[8] 92%
+[9] Avg. supplier on-time delivery
+[11] 8
+[12] Analytics endpoints (Phase 5)
+[14] 7
+[15] Core analytics capabilities
+[16] AI-Powered Inventory Management & Procurement System · POC-07
+[17] 3
+
+=== SLIDE 4 ===
+[1] SCOPE DELIVERED
+[2] What's Included in This Build
+[3] A complete, tested, production-shaped system — not a prototype.
+[6] Core Backend & Data
+[7] FastAPI + SQLAlchemy + SQLite backend, JWT authentication Product CRUD with auto SKU generation Stock movements: receipt / sale / adjustment / transfer / return Auto low-stock & out-of-stock alerting Purchase orders with auto PO numbers + submit/receive workflow Supplier management & catalog view Inventory dashboard (totals, alerts, open POs, stock value) Structured JSON event logging (structlog)
+[10] Phase 5 — Analytics & Forecasting
+[11] Inventory health score engine Sales trend analysis (30-day) Category performance & turnover classification Demand forecasting with confidence intervals Supplier performance & reliability scoring Reorder intelligence (critical / high priority) Cost analysis (holding, ordering, top drivers) 8 REST analytics endpoints + executive dashboard
+[14] AI, Agents & Interfaces
+[15] MCP server exposing 6 inventory tools LangGraph multi-agent inventory analysis (Gemini 2.0 Flash) RAG-based Q&A assistant (Chroma vector DB + inventory manual) Streamlit chat interface with deterministic local router fallback Streamlit Phase-5 executive dashboard with Plotly charts React 18 + Vite + Axios + React Router frontend
+[18] Quality, Security & Docs
+[19] 20+ automated tests across phases 1–5 (unit, API, DB, edge cases) Coverage, JUnit, Bandit (security) & Pylint reports SonarQube scan configuration Role-based access on the frontend Environment-based secrets (.env) — no hardcoded credentials README + phase documentation for setup and run instructions
+[20] AI-Powered Inventory Management & Procurement System · POC-07
+[21] 4

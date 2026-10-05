@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QA Signoff Checklist - Updated - 2026-07-31</title>
+  <style>
+    :root {
+      --text: #1b1b1b;
+      --muted: #5a5a5a;
+      --border: #d9d9d9;
+      --accent: #0b5cab;
+      --ok: #107c10;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.45;
+      background: #fff;
+    }
+    .sheet {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 26px 34px;
+    }
+    h1 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 28px;
+    }
+    .subtitle {
+      margin: 6px 0 2px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: #fff;
+      background: var(--ok);
+      padding: 5px 9px;
+      border-radius: 999px;
+    }
+    h2 {
+      margin: 20px 0 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+      font-size: 20px;
+    }
+    ol {
+      margin: 6px 0 0 22px;
+      padding: 0;
+    }
+    li {
+      margin: 4px 0;
+    }
+    .pass {
+      color: var(--ok);
+      font-weight: 600;
+    }
+    .fix {
+      border: 1px solid #cfe8cf;
+      background: #f5fbf5;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-top: 8px;
+    }
+    .signoff {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-top: 10px;
+    }
+    .line { margin: 6px 0; }
+    @media print {
+      .sheet { padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <h1>Final QA Signoff Checklist (Updated)</h1>
+    <div class="subtitle">Project: Inventory Management Portal</div>
+    <div class="subtitle">Date: 2026-07-31</div>
+    <div class="subtitle">Build Under Test: Frontend Vite app + Spring Boot backend</div>
+    <div class="badge">UPDATED AFTER REDIRECT FIX</div>
+
+    <h2>1. Test Execution Summary</h2>
+    <ol>
+      <li>Backend automated tests executed: <span class="pass">Pass</span></li>
+      <li>Manual end-to-end execution completed: <span class="pass">Yes</span></li>
+      <li>Roles covered: <span class="pass">4 of 4</span></li>
+      <li>Critical defects open: <span class="pass">0</span></li>
+      <li>High defects open: <span class="pass">0</span></li>
+      <li>Recommended release status: <span class="pass">GO</span></li>
+    </ol>
+
+    <h2>2. Environment Validation</h2>
+    <ol>
+      <li>MySQL reachable and schema available: <span class="pass">Pass</span></li>
+      <li>Backend starts on port 8080: <span class="pass">Pass</span></li>
+      <li>Frontend starts on port 5173: <span class="pass">Pass</span></li>
+      <li>API connectivity from frontend: <span class="pass">Pass</span></li>
+    </ol>
+
+    <h2>3. Authentication and Security</h2>
+    <ol>
+      <li>Register flow works for all required roles: <span class="pass">Pass</span></li>
+      <li>Login/logout works for all roles: <span class="pass">Pass</span></li>
+      <li>Protected routes require authentication: <span class="pass">Pass</span></li>
+      <li>Unauthorized role access redirects to Unauthorized page: <span class="pass">Pass</span></li>
+      <li>Post-login redirect behavior for forbidden prior route: <span class="pass">Fixed and verified</span></li>
+    </ol>
+    <div class="fix">
+      Fix confirmation: If user logs in after trying to access a forbidden route, app now redirects to a safe default route for that role instead of landing on Unauthorized.
+    </div>
+
+    <h2>4. Role Coverage Matrix</h2>
+    <ol>
+      <li>Store Manager access rules verified: <span class="pass">Pass</span></li>
+      <li>Inventory Analyst access rules verified: <span class="pass">Pass</span></li>
+      <li>Procurement Officer access rules verified: <span class="pass">Pass</span></li>
+      <li>Warehouse Staff access rules verified: <span class="pass">Pass</span></li>
+      <li>Negative route checks for forbidden pages: <span class="pass">Pass</span></li>
+    </ol>
+
+    <h2>5. Feature Completion Checklist</h2>
+    <ol>
+      <li>Dashboard role-specific rendering: <span class="pass">Pass</span></li>
+      <li>Products list/filter/search/pagination: <span class="pass">Pass</span></li>
+      <li>Product approval workflow (create and review): <span class="pass">Pass</span></li>
+      <li>Analyst reorder-settings update: <span class="pass">Pass</span></li>
+      <li>Supplier create/edit/detail/performance: <span class="pass">Pass</span></li>
+      <li>Purchase order lifecycle (draft -> submitted -> acknowledged -> received): <span class="pass">Pass</span></li>
+      <li>Stock approval workflow (approve and reject paths): <span class="pass">Pass</span></li>
+      <li>Audit log visibility/filtering: <span class="pass">Pass</span></li>
+      <li>CSV/PDF export triggers: <span class="pass">Pass</span></li>
+    </ol>
+
+    <h2>6. Data Integrity Checks</h2>
+    <ol>
+      <li>Approved product requests materialize in product list: <span class="pass">Pass</span></li>
+      <li>Approved stock request mutates stock quantities: <span class="pass">Pass</span></li>
+      <li>Received PO updates quantities and audit entries: <span class="pass">Pass</span></li>
+      <li>Rejected stock request does not mutate stock: <span class="pass">Pass</span></li>
+      <li>Dashboard/list spot-check consistency: <span class="pass">Pass</span></li>
+    </ol>
+
+    <h2>7. Defect Log Summary</h2>
+    <ol>
+      <li>Blocking defects: <span class="pass">None</span></li>
+      <li>High severity defects: <span class="pass">None</span></li>
+      <li>Medium severity defects: <span class="pass">None blocking release</span></li>
+      <li>Previous redirect observation: <span class="pass">Resolved in this update</span></li>
+    </ol>
+
+    <h2>8. Signoff</h2>
+    <div class="signoff">
+      <div class="line">QA Engineer: ____________________</div>
+      <div class="line">Product Owner: __________________</div>
+      <div class="line">Tech Lead: ______________________</div>
+      <div class="line">Signoff Date: ___________________</div>
+      <div class="line">Final Decision: GO / NO-GO</div>
+    </div>
+  </div>
+</body>
+</html>

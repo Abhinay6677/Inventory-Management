@@ -1,0 +1,6 @@
+projectKey=inventory-management-phase4
+serverUrl=http://localhost:9001
+serverVersion=26.7.0.124771
+dashboardUrl=http://localhost:9001/dashboard?id=inventory-management-phase4
+ceTaskId=2852e4bd-091f-4622-bdd0-73eb0084b1c9
+ceTaskUrl=http://localhost:9001/api/ce/task?id=2852e4bd-091f-4622-bdd0-73eb0084b1c9
